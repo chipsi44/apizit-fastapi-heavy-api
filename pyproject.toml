@@ -1,0 +1,24 @@
+[project]
+name = "apizit-fastapi-heavy-api"
+version = "1.0.0"
+description = "Standalone heavy multimodal FastAPI reference API for APIZIT."
+requires-python = ">=3.12,<3.13"
+license = "MIT"
+
+[tool.pytest.ini_options]
+addopts = "-m 'not model'"
+markers = [
+    "model: downloads or loads real machine-learning models",
+]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "RUF"]
+
+[tool.ruff.format]
+quote-style = "double"
